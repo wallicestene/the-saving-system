@@ -1,32 +1,31 @@
 // get all customers, get Single Customer, customer_create_get, customer_create_post, customer_delete
 const Customer = require("../models/customersModel")
 // get all customers
-const customer_index = (req,res, next) =>{
-    Customer.find().sort({createdAt : -1})
+const customer_index = (req,res) =>{
+    Customer.find()
     .then((result)=>{
         res.json(result)
     })
-    next()
 }
 // get Single Customer
-const customer_details = (req,res,)  =>{
+const customer_details = (req,res)  =>{
    const { id } = req.params
    Customer.findById(id)
    .then((result)=>{ 
     if(!result){
-        return res.status(400).json({error: "No such customer"})
+        return res.json({error: "No such customer"})
     }
     else{
-       res.status(200).json(result)
+       res.json(result)
     }
    })
 }
 // customer_create_get
-const customer_create_post = async (req,res) =>{
+const customer_create_post = (req,res) =>{
     const {name, amount, customerID} =  req.body
     Customer.create({ name, amount, customerID })
     .then(customer => {
-        res.status(200).json(customer);
+        res.json(customer);
     })
     .catch(error => {
         console.log("Error in creating new customers:", error);
@@ -34,22 +33,44 @@ const customer_create_post = async (req,res) =>{
     });
 }
 // customer_delete
-const customer_delete = (req,res) =>{
-    const {id} = req.params
+const customer_delete = (req, res) => {
+    const { id } = req.params;
     
-    Customer.findByIdAndDelete({_id: id})
-        .then((result)=>{ 
-            if(!result){
-                return res.status(400).json({error: "No such customer"})
+    Customer.findByIdAndDelete(id)
+        .then((result) => { 
+            if (!result) {
+                return res.status(400).json({ error: "No such customer" });
+            } else {
+                res.json(result);
             }
-            else{
-               res.status(200).json(result)
+        })
+        .catch((error) => {
+            console.log("Error in deleting customer:", error);
+            res.status(500).json({ error: "Error in deleting customer" });
+        });
+};
+
+const updateCustomerDetails = (req, res) => {
+    const { id } = req.params;
+    
+    Customer.findOneAndUpdate({ _id: id }, { ...req.body })
+        .then((result) => { 
+            if (!result) {
+                return res.status(400).json({ error: "No such customer" });
+            } else {
+                res.json(result);
             }
-           })
-}
+        })
+        .catch((error) => {
+            console.log("Error in updating customer details:", error);
+            res.status(500).json({ error: "Error in updating customer details" });
+        });
+};
+
 module.exports = {
     customer_index,
     customer_details,
     customer_create_post,
-    customer_delete
+    customer_delete,
+    updateCustomerDetails,
 }

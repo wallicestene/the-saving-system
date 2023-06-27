@@ -10,5 +10,7 @@ router.post("/api/customers", customerController.customer_create_post)
 router.get('/api/customers/:id',customerController.customer_details)
 // delete a customer form list of customers
 router.delete('/api/customers/:id', customerController.customer_delete)
+// update a customer details
+router.patch('/api/customers/:id', customerController.updateCustomerDetails);
  
 module.exports = router
