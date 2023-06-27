@@ -19,6 +19,6 @@ console.log('server is running on port', 5000);
 
 // middleware
 app.use(morgan("dev"))
-
+app.use(express.json())
 //customers routes
 app.use(customersRoutes)

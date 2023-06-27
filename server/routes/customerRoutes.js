@@ -8,8 +8,6 @@ router.get("/api/customers", customerController.customer_index)
 router.post("/api/customers", customerController.customer_create_post)
 // get single customer
 router.get('/api/customers/:id',customerController.customer_details)
-    // const id = req.params.id;
- 
 // delete a customer form list of customers
 router.delete('/api/customers/:id', customerController.customer_delete)
  
