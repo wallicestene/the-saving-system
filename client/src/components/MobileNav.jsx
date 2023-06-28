@@ -11,13 +11,13 @@ const MobileNav = ({showMobileNav, setShowMobileNav}) => {
         </div>
         <ul className='flex flex-col gap-5 px-3'>
             <li >
-                <Link to="/">
+                <Link to="/" onClick={() => setShowMobileNav(!showMobileNav)}>
                 <NavbarOptions Icon={Home} title="Home"/>
                 </Link>
                 </li>
             <li>
-                <Link to="/savingform">
-                <NavbarOptions Icon={Create} title="Saving Form"/>
+                <Link to="/savingform" onClick={() => setShowMobileNav(!showMobileNav)}>
+                <NavbarOptions Icon={Create} title="Add Customer"/>
                 </Link>
                 </li>
         </ul>

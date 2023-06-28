@@ -10,7 +10,7 @@ const Customers = ({customer}) => {
         <div className='flex p-2 gap-5 items-center justify-around'>
           <h1 className='uppercase'>Name: <span className='block'>{customer.name}</span></h1> 
            <p className='uppercase'>ID:  <span className='block'>{customer.customerID}</span></p>
-           <p className='uppercase'>Amount:  <span className='block'>{customer.amount}</span></p>
+           <p className='uppercase'>Amount:  <span className='block'>Ksh {customer.amount.toLocaleString()}</span></p>
         </div>
         </Link> 
         <div className='flex justify-between flex-row-reverse'>

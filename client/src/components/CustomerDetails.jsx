@@ -1,10 +1,12 @@
-import { KeyboardArrowLeft, KeyboardBackspace } from '@mui/icons-material'
+import { Delete, KeyboardArrowLeft, KeyboardBackspace } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 
 const CustomerDetails = () => {
 
     const [amount, setAmount] = useState("")
+
+    const [showDelete, setShowDelete] = useState(false)
 
     const [customerData,setCustomerData ] = useState([])
 
@@ -27,6 +29,8 @@ const CustomerDetails = () => {
         })
         .then(res => res.json())
         .catch(err => alert(err.message))
+        setAmount("")
+        history.go(-1)
    }
     const { id } = useParams()
     useEffect(() =>{
@@ -38,9 +42,20 @@ const CustomerDetails = () => {
     })
     .catch(err => console.log(err.message))
     },[])
+
+    const handleclick = () =>{
+        fetch(`http://localhost:5000/api/customers/${customerData._id}`,{
+            method: "DELETE",
+        })
+        .then((res) => res.json())
+        .catch(err =>{
+            console.log(err.message)
+        })
+    }
+
   return (
     <section className='mt-20 h-screen grid place-items-center'>
-    <div className=' p-5 bg-gray-200 w-96 flex flex-col  rounded'>
+    <div className=' p-5 bg-gray-200 w-96 flex flex-col  rounded relative'>
         <div className='h-10 w-10 grid place-items-center cursor-pointer ' onClick={() => history.go(-1)}>
             <KeyboardBackspace fontSize='large'/>
         </div>
@@ -48,10 +63,10 @@ const CustomerDetails = () => {
         <div className='flex flex-col gap-2'>
           <h1 className='uppercase'> <strong>Name: </strong><span className=''>{customerData.name}</span></h1> 
            <p className='uppercase'><strong>ID:  </strong><span className=''>{customerData.customerID}</span></p>
-           <p className='uppercase'><strong>Amount:  </strong><span className=' lowercase first-letter:uppercase'>Ksh {customerData.amount}</span></p>
+           <p className='uppercase'><strong>Amount:  </strong><span className='uppercase'>Ksh {customerData.amount ? customerData.amount.toLocaleString() : ""}</span></p>
         </div>
-        <p  className='px-2 text-sm text-gray-500'>Created on: {new Date(customerData.createdAt).toLocaleString()}</p>
-        <p  className='px-2 text-sm text-gray-500'>Last Deposit: {new Date(customerData.updatedAt).toLocaleString()}</p>
+        <p  className='px-2 text-xs text-gray-500'>Created on: {new Date(customerData.createdAt).toLocaleString()}</p>
+        <p  className='px-2 text-xs text-gray-500'>Last Deposit: {new Date(customerData.updatedAt).toLocaleString()}</p>
         <form onSubmit={handleSubmit}
          className=' w-full'>
        <div className=' flex flex-col gap-4 text-center'>
@@ -72,7 +87,39 @@ const CustomerDetails = () => {
               </div>
        </div>
         </form>
+        <div className='bg-gray-100 rounded absolute bottom-0 right-1 z-40 cursor-pointer'>
+            <div className='flex justify-end text-xs' onClick={() => setShowDelete(!showDelete)}>
+               <Delete fontSize='small'/>
+                <div>
+                <h1>Delete Customer</h1>
+                </div>
+            </div>
+            
+            
         </div>
+         {
+            showDelete && 
+            <div className=' absolute left-0 bg-opacity-90 text-white z-40 top-0 rounded right-0 grid place-items-center bg-gray-900 p-5 text-center'>
+            <p>
+                Are you sure you want to delete <strong>{customerData.name}</strong> from your customer list?
+            </p>
+            <button className='p-5 left-0'>
+                 <div className=' flex gap-3 items-center '>
+                 <div className=' flex items-center justify-center bg-red-600 text-white h-10 w-20 rounded-full' onClick={() => {
+                handleclick()
+                history.go(-1)
+                }}>
+                 <h1>Yes</h1>
+                 </div>
+                 <div  className=' flex items-center justify-center h-10 w-20 bg-green-700  rounded-full text-white' onClick={() => setShowDelete(!showDelete)}>
+                 <h1>No</h1>
+                 </div>
+                 </div>
+            </button>
+            </div>
+         }
+        </div>
+        
         </section>
   )
 }
