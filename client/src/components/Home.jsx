@@ -17,7 +17,7 @@ const Home = () => {
         })
     }, [])
   return (
-    <div>
+    <div className=' mt-20'>
         <h1 className="text-center mb-3">Customers</h1>
         <ul className=' bg-blue-100 h-screen overflow-y-scroll p-5'>
             { customerData.length > 0 ? (

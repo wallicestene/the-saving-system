@@ -6,9 +6,12 @@ import SavingsForm from './components/SavingsForm'
 
 const App = () => {
   return (
-    <div className='mx-3'>
+    <div className='relative'>
       <Router>
-        <Navbar/>
+        <div className=' fixed w-full  lg:p-0 top-0 z-40'>
+           <Navbar/>
+        </div>
+       
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/savingform" component={SavingsForm}/>
