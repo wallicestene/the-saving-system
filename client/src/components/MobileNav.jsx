@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 
 const MobileNav = ({showMobileNav, setShowMobileNav}) => {
   return (
-    <div className=' bg-gray-400 h-screen w-full p-4'>
-        <div className='mb-3 text-gray-200'>
+    <div className=' backdrop-blur-md bg-white/10 h-screen w-full p-4'>
+        <div className='mb-3 text-gray-900'>
             <Close onClick={() => setShowMobileNav(!showMobileNav)}/>
         </div>
         <ul className='flex flex-col gap-5 px-3'>
-            <li>
+            <li >
                 <Link to="/">
                 <NavbarOptions Icon={Home} title="Home"/>
                 </Link>

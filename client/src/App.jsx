@@ -3,6 +3,7 @@ import  { HashRouter as Router, Route, Switch } from 'react-router-dom/cjs/react
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import SavingsForm from './components/SavingsForm'
+import CustomerDetails from './components/CustomerDetails'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
        
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/customer/:id" component={CustomerDetails}/>
           <Route path="/savingform" component={SavingsForm}/>
         </Switch>
       </Router>

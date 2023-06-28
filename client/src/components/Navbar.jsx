@@ -8,7 +8,7 @@ const Navbar = () => {
     const [showMobileNav, setShowMobileNav] = useState(false)
 
   return (
-    <nav className=' flex items-center justify-between bg-slate-400 px-2 lg:h-fit h-16 relative'>
+    <nav className=' flex items-center justify-between bg-white shadow-md px-2 lg:h-20 h-16 relative'>
             <div className=' fixed lg:hidden z-40 right-0 top-0'>
                {
                 showMobileNav && <MobileNav showMobileNav={showMobileNav} setShowMobileNav={setShowMobileNav}/>  
@@ -24,7 +24,7 @@ const Navbar = () => {
     
        </div>
        <div>
-        <ul className='hidden lg:flex gap-5  px-3'>
+        <ul className='hidden lg:flex gap-5 w-96 px-3 items-center justify-evenly'>
             <li>
                 <Link to="/">
                 <NavbarOptions Icon={Home} title="Home"/>

@@ -2,7 +2,7 @@
 const Customer = require("../models/customersModel")
 // get all customers
 const customer_index = (req,res) =>{
-    Customer.find()
+    Customer.find().sort({createdAt: -1})
     .then((result)=>{
         res.json(result)
     })

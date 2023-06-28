@@ -29,7 +29,7 @@ const SavingsForm = () => {
         <form onSubmit={handleSubmit}
         className=' w-96 h-screen grid place-items-center'>
         
-            <div className=' w-full p-2'>
+            <div className=' w-full p-2 flex flex-col gap-2'>
                 <div className='text-center p-3'>
                     <h1>Customer Details</h1>
                 </div>
@@ -44,7 +44,7 @@ const SavingsForm = () => {
             onChange={(e) => setName(e.target.value) }
              id='name'  
              value={name}
-             className='bg-blue-300 p-2 rounded-md bg-none w-full'
+             className=' placeholder:text-gray-500 bg-slate-300 p-2 rounded-md bg-none w-full'
               />
             <label htmlFor="ID" className='block'>
             Customer's ID 
@@ -53,11 +53,12 @@ const SavingsForm = () => {
             <input type="number"
             name='customerID'
             required
+            min="0"
             value={customerID}
             placeholder="Enter Customer's ID"
             onChange={(e) => setCustomerID(e.target.value) }
              id='ID' 
-              className='bg-blue-300 p-2 rounded-md bg-none w-full' 
+              className=' placeholder:text-gray-500 bg-slate-300 p-2 rounded-md bg-none w-full' 
               />
             <label htmlFor="amount" className='block'>
             Customer's Saving Amount
@@ -65,13 +66,15 @@ const SavingsForm = () => {
 
             <input type="number"
             name='amount'
-            required
+            min="0"
             value={amount}
             onChange={(e) => setAmount(e.target.value) }
              placeholder=' Enter Saving amount'
              id='amount' 
-              className='bg-blue-300 p-2 rounded-md bg-none w-full' />
-              <button>SUBMIT</button>
+              className=' placeholder:text-gray-500 bg-slate-300 p-2 rounded-md bg-none w-full' />
+              <div className='grid place-items-center'>
+              <button className=' bg-gradient-to-t from-red-500 to-red-700 px-6 text-white tracking-wide py-2 rounded-xl'>SUBMIT</button>
+              </div>
               </div>
         </form>
     </div>
