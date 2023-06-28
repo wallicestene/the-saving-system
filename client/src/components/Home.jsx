@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Customers from './Customers'
+import { CircularProgress } from '@mui/material'
 
 const Home = () => {
     const [customerData, setCustomerData] = useState([])
@@ -31,7 +32,10 @@ const Home = () => {
                     }
                 </div>
             ) : (
-                <div>Loading...</div>
+                <div className=' grid place-items-center'>
+                    <CircularProgress/>
+                Loading...    
+                </div>
             )
         }
         </ul>
