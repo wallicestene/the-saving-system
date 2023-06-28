@@ -6,7 +6,9 @@ const customersRoutes = require("./routes/customerRoutes")
 // connecting to mongodb
 const dbURI = "mongodb+srv://wallace:wallace@saving.sspopmb.mongodb.net/saving?retryWrites=true&w=majority"
 mongoose.connect(dbURI)
-.then(() => app.listen(5000))
+.then(() =>{
+    app.listen(5000)
+})
 .catch((err) => console.log(err))
 
 // express app
