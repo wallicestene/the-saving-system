@@ -83,7 +83,7 @@ const CustomerDetails = () => {
              className='placeholder:text-gray-500 mt-2 bg-slate-300 p-2 rounded-md bg-none w-full'
               /></label>
               <div className=' grid place-items-center'>
-              <button className=' bg-gradient-to-r from-red-500 to-red-700 px-6 text-white tracking-wide py-2 rounded-xl uppercase'>Deposit</button>
+              <button className=' bg-gradient-to-r from-red-500 to-red-700 px-6 text-white tracking-wide py-2 rounded-xl uppercase transition ease-in-out delay-75  hover:scale-110 duration-200'>Deposit</button>
               </div>
        </div>
         </form>

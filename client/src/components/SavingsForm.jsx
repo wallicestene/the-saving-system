@@ -73,7 +73,7 @@ const SavingsForm = () => {
              id='amount' 
               className=' placeholder:text-gray-500 bg-slate-300 p-2 rounded-md bg-none w-full' />
               <div className='grid place-items-center'>
-              <button className=' bg-gradient-to-t from-red-500 to-red-700 px-6 text-white tracking-wide py-2 rounded-xl'>SUBMIT</button>
+              <button className=' bg-gradient-to-t from-red-500 to-red-700 px-6 text-white tracking-wide py-2 rounded-xl transition ease-in-out delay-75 hover:scale-110 duration-200'>SUBMIT</button>
               </div>
               </div>
         </form>
