@@ -6,7 +6,7 @@ import SavingsForm from './components/SavingsForm'
 
 const App = () => {
   return (
-    <div>
+    <div className='mx-3'>
       <Router>
         <Navbar/>
         <Switch>

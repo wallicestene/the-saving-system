@@ -18,13 +18,15 @@ const Home = () => {
     }, [])
   return (
     <div>
-        <h1 className="text-center">Customers</h1>
-        <div>
+        <h1 className="text-center mb-3">Customers</h1>
+        <ul className=' bg-blue-100 h-screen overflow-y-scroll p-5'>
             { customerData.length > 0 ? (
-                <div className=' flex flex-col bg-slate-200 gap-2 '>
+                <div className=' flex flex-col gap-2 '>
                     {
                         customerData.map((customer, index) =>(
-                            <Customers key={index} customer={customer}/>
+                            <li key={index}>
+                               <Customers  customer={customer}/> 
+                            </li>
                         ))
                     }
                 </div>
@@ -32,7 +34,7 @@ const Home = () => {
                 <div>Loading...</div>
             )
         }
-        </div>
+        </ul>
     </div>
   )
 }
