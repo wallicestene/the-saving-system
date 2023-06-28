@@ -25,13 +25,13 @@ const SavingsForm = () => {
         setAmount("")
     }
   return (
-    <div className='grid place-items-center'>
+    <div className='grid place-items-center font-Montserrat'>
         <form onSubmit={handleSubmit}
-        className=' w-96 h-screen grid place-items-center'>
+        className=' w-96 h-screen grid place-items-center border'>
         
             <div className=' w-full p-2 flex flex-col gap-2'>
-                <div className='text-center p-3'>
-                    <h1>Customer Details</h1>
+                <div className='text-center p-3 font-Poppins uppercase tracking-wider'>
+                    <h1><strong>Customer Details</strong></h1>
                 </div>
             <label htmlFor="name" className='block'>
                 Customer's Name 

@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {},
-      fontFamily: {}
+      fontFamily: {
+        Montserrat: "Montserrat",
+        Poppins: "Poppins"
+      }
     },
   },
   plugins: [],

@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className='relative'>
       <Router>
-        <div className=' fixed w-full  lg:p-0 top-0 z-40'>
+        <div className=' sticky w-full  lg:p-0 top-0 z-40'>
            <Navbar/>
         </div>
        

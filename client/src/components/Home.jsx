@@ -17,11 +17,11 @@ const Home = () => {
         })
     }, [])
   return (
-    <div className=' mt-20'>
-        <h1 className="text-center mb-3">Customers</h1>
-        <ul className=' bg-blue-100 h-screen overflow-y-scroll p-5'>
+    <div className='bg-gray-50 font-Montserrat'>
+        <h1 className="text-center sticky top-16 bg-white mb-3 p-5 text-lg uppercase font-Poppins tracking-wide font-extrabold">All Customers</h1>
+        <ul className=' h-screen overflow-y-scroll p-5'>
             { customerData.length > 0 ? (
-                <div className=' flex flex-col gap-2 '>
+                <div className=' flex flex-col gap-4 tracking-tight '>
                     {
                         customerData.map((customer, index) =>(
                             <li key={index}>

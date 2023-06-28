@@ -54,8 +54,8 @@ const CustomerDetails = () => {
     }
 
   return (
-    <section className='mt-20 h-screen grid place-items-center'>
-    <div className=' p-5 bg-gray-200 w-96 flex flex-col  rounded relative'>
+    <section className=' h-screen grid place-items-center'>
+    <div className=' p-5 bg-gray-200 w-96 flex flex-col  rounded relative shadow-l'>
         <div className='h-10 w-10 grid place-items-center cursor-pointer ' onClick={() => history.go(-1)}>
             <KeyboardBackspace fontSize='large'/>
         </div>
