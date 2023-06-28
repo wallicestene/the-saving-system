@@ -1,11 +1,14 @@
+import { KeyboardArrowLeft, KeyboardBackspace } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 
 const CustomerDetails = () => {
 
     const [amount, setAmount] = useState("")
 
     const [customerData,setCustomerData ] = useState([])
+
+    const history = useHistory()
 
    const handleSubmit = (e) =>{
     e.preventDefault()
@@ -37,16 +40,20 @@ const CustomerDetails = () => {
     },[])
   return (
     <section className='mt-20 h-screen grid place-items-center'>
-    <div className=' p-5 bg-slate-400 w-96 flex flex-col items-center'>
-        <h1 className='text-lg font-bold mb-1 border-b-2'>Customer'details</h1>
-        <div className='flex flex-col gap-2'>
-          <h1 className='uppercase'>Name: <span className=''>{customerData.name}</span></h1> 
-           <p className='uppercase'>ID:  <span className=''>{customerData.customerID}</span></p>
-           <p className='uppercase'>Amount:  <span className=' lowercase first-letter:uppercase'>Ksh {customerData.amount}</span></p>
+    <div className=' p-5 bg-gray-200 w-96 flex flex-col  rounded'>
+        <div className='h-10 w-10 grid place-items-center cursor-pointer ' onClick={() => history.go(-1)}>
+            <KeyboardBackspace fontSize='large'/>
         </div>
-        {/* <p>{customerData.createdAt}</p> */}
+        <h1 className='text-lg font-bold mb-1 border-b-2 border-slate-900'>Customer's Details</h1>
+        <div className='flex flex-col gap-2'>
+          <h1 className='uppercase'> <strong>Name: </strong><span className=''>{customerData.name}</span></h1> 
+           <p className='uppercase'><strong>ID:  </strong><span className=''>{customerData.customerID}</span></p>
+           <p className='uppercase'><strong>Amount:  </strong><span className=' lowercase first-letter:uppercase'>Ksh {customerData.amount}</span></p>
+        </div>
+        <p  className='px-2 text-sm text-gray-500'>Created on: {new Date(customerData.createdAt).toLocaleString()}</p>
+        <p  className='px-2 text-sm text-gray-500'>Last Deposit: {new Date(customerData.updatedAt).toLocaleString()}</p>
         <form onSubmit={handleSubmit}
-         className=' w-96'>
+         className=' w-full'>
        <div className=' flex flex-col gap-4 text-center'>
        <label htmlFor="amount" className='block m-2'>
                <h1 className=' text-lg font-bold'>Deposit amount to Save</h1>

@@ -13,7 +13,10 @@ const Customers = ({customer}) => {
            <p className='uppercase'>Amount:  <span className='block'>{customer.amount}</span></p>
         </div>
         </Link> 
-        <p className='px-2 text-sm text-gray-500'>Created at: {customer.createdAt}</p>
+        <div className='flex justify-between flex-row-reverse'>
+           <div className='px-2 text-xs text-gray-500'>Created on: {new Date(customer.createdAt).toLocaleString()}</div>
+            <div className='px-2 text-xs text-gray-500'>Last Deposit: {new Date(customer.updatedAt).toLocaleString()}</div>  
+        </div>
     </div>
   )
 }
