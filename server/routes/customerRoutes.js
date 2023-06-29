@@ -12,5 +12,6 @@ router.get('/api/customers/:id',customerController.customer_details)
 router.delete('/api/customers/:id', customerController.customer_delete)
 // update a customer details
 router.patch('/api/customers/:id', customerController.updateCustomerDetails);
- 
+//  getting the total amount from all customers
+router.get('/api/totalAmount', customerController.getTotalSavings);
 module.exports = router

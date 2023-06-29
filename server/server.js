@@ -1,6 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require('cors');
+
+require("dotenv").config()
+
 const mongoose = require("mongoose");
 const customersRoutes = require("./routes/customerRoutes");
 
@@ -13,15 +16,15 @@ app.use(express.json());
 app.use(cors());
 
 // connecting to mongodb
-const dbURI = "mongodb+srv://wallace:wallace@saving.sspopmb.mongodb.net/saving?retryWrites=true&w=majority";
-mongoose.connect(dbURI, {
+
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => {
-    app.listen(5000);
+    app.listen(process.env.PORT);
     console.log("Connected to the database");
-    console.log("Server is running on port 5000");
+    console.log("Server is running on port",process.env.PORT );
   })
   .catch((err) => console.log(err));
 

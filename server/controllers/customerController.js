@@ -49,7 +49,7 @@ const customer_delete = (req, res) => {
             res.status(500).json({ error: "Error in deleting customer" });
         });
 };
-
+// updating the amount
 const updateCustomerDetails = (req, res) => {
     const { id } = req.params;
     
@@ -67,10 +67,37 @@ const updateCustomerDetails = (req, res) => {
         });
 };
 
+//  getting the total amount of saving acrosss all customers
+const getTotalSavings = (req,res) =>{
+    Customer.aggregate([
+        {
+          $group: {
+            _id: null,
+            totalAmount: { $sum: "$amount" }
+          }
+        }
+      ])
+        .then((result) => {
+            console.log(result);
+          if (result.length > 0) {
+            const totalAmount = result[0].totalAmount;
+            res.json(totalAmount.toLocaleString()); // Return the total amount as a JSON response
+          } else {
+            res.json({ totalAmount: 0 }); // Return 0 if no customers found
+          }
+        })
+        .catch((error) => {
+          console.error("Error retrieving total amount: ", error);
+          res.status(500).json({ error: "An error occurred" }); // Return an error response
+        });
+}
+
+
 module.exports = {
     customer_index,
     customer_details,
     customer_create_post,
     customer_delete,
     updateCustomerDetails,
+    getTotalSavings
 }
