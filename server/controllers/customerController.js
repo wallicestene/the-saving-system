@@ -78,12 +78,11 @@ const getTotalSavings = (req,res) =>{
         }
       ])
         .then((result) => {
-            console.log(result);
           if (result.length > 0) {
             const totalAmount = result[0].totalAmount;
             res.json(totalAmount.toLocaleString()); // Return the total amount as a JSON response
           } else {
-            res.json({ totalAmount: 0 }); // Return 0 if no customers found
+            res.json(0); // Return 0 if no customers found
           }
         })
         .catch((error) => {

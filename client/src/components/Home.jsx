@@ -19,7 +19,7 @@ const Home = () => {
     }, [])
   return (
     <div className='bg-gray-50 font-Montserrat'>
-        <h1 className="text-center sticky top-16 bg-white mb-3 p-5 text-lg uppercase font-Poppins tracking-wide font-extrabold z-40">All Customers</h1>
+        <h1 className="text-center sticky top-16 bg-white mb-3 p-5 text-lg uppercase font-Poppins tracking-wide font-extrabold z-20">All Customers</h1>
         <ul className=' h-screen overflow-y-scroll px-5 scroll-smooth'>
             { customerData.length > 0 ? (
                 <div className=' flex flex-col gap-4 tracking-tight '>

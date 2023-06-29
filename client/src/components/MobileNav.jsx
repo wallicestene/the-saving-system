@@ -1,4 +1,4 @@
-import { Close, Create, Home } from '@mui/icons-material'
+import { Close, Create, Home, PersonAddAlt1, Savings } from '@mui/icons-material'
 import React from 'react'
 import NavbarOptions from './NavbarOptions'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
@@ -9,17 +9,22 @@ const MobileNav = ({showMobileNav, setShowMobileNav}) => {
         <div className='mb-3 text-gray-900'>
             <Close onClick={() => setShowMobileNav(!showMobileNav)}/>
         </div>
-        <ul className='flex flex-col gap-5 px-3'>
+        <ul className='flex flex-col gap-5 px-3 font-bold'>
             <li >
                 <Link to="/" onClick={() => setShowMobileNav(!showMobileNav)}>
                 <NavbarOptions Icon={Home} title="Home"/>
                 </Link>
-                </li>
+              </li>
+              <li>
+                <Link to="/totalAmount" onClick={() => setShowMobileNav(!showMobileNav)}>
+                <NavbarOptions Icon={Savings} title="Total Savings"/>
+                </Link>
+            </li>
             <li>
                 <Link to="/savingform" onClick={() => setShowMobileNav(!showMobileNav)}>
-                <NavbarOptions Icon={Create} title="Add Customer"/>
+                <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
                 </Link>
-                </li>
+            </li>
         </ul>
     </div>
   )

@@ -4,6 +4,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import SavingsForm from './components/SavingsForm'
 import CustomerDetails from './components/CustomerDetails'
+import TotalSavings from './components/TotalSavings'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path="/" component={Home}/>
           <Route exact path="/customer/:id" component={CustomerDetails}/>
           <Route path="/savingform" component={SavingsForm}/>
+          <Route path="/totalAmount" component={TotalSavings}/>
         </Switch>
       </Router>
     </div>

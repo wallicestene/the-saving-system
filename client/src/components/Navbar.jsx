@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import NavbarOptions from './NavbarOptions'
-import { Create, Home, Menu } from '@mui/icons-material'
+import {Home, Menu, PersonAddAlt1, Savings } from '@mui/icons-material'
 import MobileNav from './MobileNav'
 
 const Navbar = () => {
@@ -15,26 +15,34 @@ const Navbar = () => {
                }
             </div>
        <div className=' flex items-center justify-between w-full'>
-       <h1 className=" uppercase text-2xl">SafeSaver</h1>
+       <h1 className=" uppercase text-2xl font-bold">SafeSaver</h1>
        <div className=' lg:hidden'>
           {
-         <Menu onClick={() => setShowMobileNav(!showMobileNav)}/>
+            <div className=' cursor-pointer'>
+              <Menu onClick={() => setShowMobileNav(!showMobileNav)} fontSize='large'/>
+            </div>
+         
       }
        </div>
     
        </div>
        <div>
-        <ul className='hidden lg:flex gap-5 w-96 px-3 items-center justify-evenly'>
+        <ul className='hidden  lg:flex w-500 px-3 items-center justify-between font-bold'>
             <li>
                 <Link to="/">
                 <NavbarOptions Icon={Home} title="Home"/>
                 </Link>
-                </li>
+            </li>
+            <li>
+                <Link to="/totalAmount">
+                <NavbarOptions Icon={Savings} title="Total Savings"/>
+                </Link>
+            </li>
             <li>
                 <Link to="/savingform">
-                <NavbarOptions Icon={Create} title="Add Customer"/>
+                <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
                 </Link>
-                </li>
+            </li>
         </ul>
        </div>
     </nav>

@@ -10,6 +10,9 @@ export default {
       fontFamily: {
         Montserrat: "Montserrat",
         Poppins: "Poppins"
+      },
+      width:{
+        500: "500px"
       }
     },
   },
