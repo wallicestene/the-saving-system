@@ -21,7 +21,7 @@ const CustomerDetails = () => {
 
     const savingAmount = { amount: updatedAmount };
 
-        fetch(`http://localhost:5000/api/customers/${id}`,{
+        fetch(`https://saving-system.onrender.com/api/customers/${id}`,{
             method: "PATCH",
             body: JSON.stringify(savingAmount),
             headers:{
@@ -36,7 +36,7 @@ const CustomerDetails = () => {
     const { id } = useParams()
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/api/customers/${id}`)
+        fetch(`https://saving-system.onrender.com/api/customers/${id}`)
         .then(res => res.json())
         .then(data =>{
                 setCustomerData(data)
@@ -48,7 +48,7 @@ const CustomerDetails = () => {
 // deleting the customer
 
     const handleclick = () =>{
-        fetch(`http://localhost:5000/api/customers/${customerData._id}`,{
+        fetch(`https://saving-system.onrender.com/api/customers/${customerData._id}`,{
             method: "DELETE",
         })
         .then((res) => res.json())

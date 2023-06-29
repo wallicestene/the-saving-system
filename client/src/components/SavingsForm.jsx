@@ -10,7 +10,7 @@ const SavingsForm = () => {
 
         const customer = {name, customerID, amount}
 
-        fetch("http://localhost:5000/api/customers", {
+        fetch("https://saving-system.onrender.com/api/customers", {
             method: "POST",
             body: JSON.stringify(customer),
             headers:{

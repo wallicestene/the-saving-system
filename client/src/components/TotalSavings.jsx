@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function TotalSavings() {
     const [totalAmount, setTotalAmount] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/api/totalAmount')
+        fetch('https://saving-system.onrender.com/api/totalAmount')
         .then(response => response.json())
         .then(data => {
             setTotalAmount(data)

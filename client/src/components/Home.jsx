@@ -6,7 +6,7 @@ const Home = () => {
     const [customerData, setCustomerData] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:5000/api/customers')
+        fetch('https://saving-system.onrender.com/api/customers')
         .then(res => res.json())
         .then(data =>{
             if(data.length > 0){
