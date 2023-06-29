@@ -44,7 +44,7 @@ const CustomerDetails = () => {
     })
     .catch(err => console.log(err.message))
     },[])
-    
+
 // deleting the customer
 
     const handleclick = () =>{
@@ -75,12 +75,12 @@ const CustomerDetails = () => {
          className=' w-full'>
        <div className=' flex flex-col gap-4 text-center'>
        <label htmlFor="amount" className='block m-2'>
-               <h1 className=' text-lg font-bold'>Deposit amount to Save</h1>
+               <h1 className=' text-lg font-bold'>Deposit amount to <span className=' uppercase'>{customerData.name}</span></h1>
             <input type="number"
             min="0"
             name='amount'
             required
-            placeholder="Enter amount "
+            placeholder="Enter deposit amount "
             onChange={(e) => setAmount(e.target.value) }
              id='amount'  
              value={amount}

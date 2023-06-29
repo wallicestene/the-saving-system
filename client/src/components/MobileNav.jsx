@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 const MobileNav = ({showMobileNav, setShowMobileNav}) => {
   return (
     <div className=' backdrop-blur-md bg-white/10 h-screen w-full p-4'>
-        <div className='mb-3 text-gray-900'>
-            <Close onClick={() => setShowMobileNav(!showMobileNav)}/>
+        <div className='mb-3 text-gray-900 cursor-pointer'>
+            <Close onClick={() => setShowMobileNav(!showMobileNav)} fontSize='large'/>
         </div>
-        <ul className='flex flex-col gap-5 px-3 font-bold'>
+        <ul className='flex flex-col gap-10 px-3 font-bold'>
             <li >
                 <Link to="/" onClick={() => setShowMobileNav(!showMobileNav)}>
                 <NavbarOptions Icon={Home} title="Home"/>
