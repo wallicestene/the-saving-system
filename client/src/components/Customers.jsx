@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 const Customers = ({customer}) => {
     console.log(customer._id)
   return (
-    <div className='customers flex flex-col gap-1  text-sm lg:text-base  bg-white rounded-md shadow-lg hover:bg-gradient-to-b from-gray-700 from-20% to-slate-400 hover:text-white transition ease-in-out delay-100 hover:scale-90 duration-200'>
+    <div className='customers flex flex-col gap-1  text-sm lg:text-base  bg-white rounded-md shadow-lg hover:bg-gradient-to-b from-gray-700 from-20% to-slate-400 hover:text-white transition ease-in-out delay-100 hover:scale-95 duration-100'>
 
         <Link to={`/customer/${customer._id}`}>
         <div className='flex p-2 gap-5 items-center justify-around'>

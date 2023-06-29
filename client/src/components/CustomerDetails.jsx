@@ -16,7 +16,8 @@ const CustomerDetails = () => {
     e.preventDefault()
     const id = customerData._id
 
-    const updatedAmount = Number(customerData.amount) + Number(amount); // Calculating the updated amount
+    // Calculating the updated amount
+    const updatedAmount = Number(customerData.amount) + Number(amount); 
 
     const savingAmount = { amount: updatedAmount };
 
@@ -33,6 +34,7 @@ const CustomerDetails = () => {
         history.go(-1)
    }
     const { id } = useParams()
+
     useEffect(() =>{
         fetch(`http://localhost:5000/api/customers/${id}`)
         .then(res => res.json())
@@ -42,6 +44,8 @@ const CustomerDetails = () => {
     })
     .catch(err => console.log(err.message))
     },[])
+    
+// deleting the customer
 
     const handleclick = () =>{
         fetch(`http://localhost:5000/api/customers/${customerData._id}`,{
