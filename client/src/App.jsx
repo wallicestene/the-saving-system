@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import SavingsForm from './components/SavingsForm'
 import CustomerDetails from './components/CustomerDetails'
 import TotalSavings from './components/TotalSavings'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/totalAmount" component={TotalSavings}/>
         </Switch>
       </Router>
+      <Toaster/>
     </div>
   )
 }
