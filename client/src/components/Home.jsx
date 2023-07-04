@@ -61,7 +61,7 @@ const Home = () => {
         
     }
   return (
-    <div className='bg-gray-50 font-Montserrat'>
+    <div className=' font-Montserrat'>
         <div className="text-center sticky top-16 bg-white mb-3 p-5  z-20">
         <h1 className='text-lg uppercase font-Poppins tracking-wide font-extrabold'>All Customers</h1>
         <div className=' flex justify-center'>
