@@ -6,6 +6,7 @@ require("dotenv").config()
 
 const mongoose = require("mongoose");
 const customersRoutes = require("./routes/customerRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 // express app
 const app = express();
@@ -30,6 +31,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // customers routes
 app.use(customersRoutes);
+// admin routes
+app.use(adminRoutes)
 
 // fallback route for handling unknown routes
 app.use((req, res) => {
