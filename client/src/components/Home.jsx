@@ -65,7 +65,7 @@ const Home = () => {
         <div className="text-center sticky top-16 bg-white mb-3 p-5  z-20">
         <h1 className='text-lg uppercase font-Poppins tracking-wide font-extrabold'>All Customers</h1>
         <div className=' flex justify-center'>
-        <form onSubmit={handleInput} className='px-5 flex items-center justify-center bg-gray-100 border-t shadow-xl lg:w-500 w-96 rounded-xl mt-1'>
+        <form onSubmit={handleInput} className='px-5 flex items-center justify-center bg-gray-50 border-t shadow-xl lg:w-500 w-96 rounded-xl mt-1'>
             <div>
                 <Search/>
             </div>
