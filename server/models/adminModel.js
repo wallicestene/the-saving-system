@@ -37,7 +37,32 @@ adminSchema.statics.signup = function (email, password) {
       return bcrypt.genSalt(10);
     })
     .then((salt) => bcrypt.hash(password, salt))
-    .then((hash) => this.create({ email, password: hash }))
+    .then((hash) => this.create({ email, password: hash }));
+};
+
+// static login method
+adminSchema.statics.login = function (email, password) {
+  if (!email || !password) {
+    return Promise.reject(Error("All fields must be filled"));
+  }
+
+  let foundAdmin;
+
+  return this.findOne({ email })
+    .then((admin) => {
+      if (!admin) {
+        throw Error("Incorrect email");
+      }
+      foundAdmin = admin;
+
+      return bcrypt.compare(password, admin.password);
+    })
+    .then((match) => {
+      if (!match) {
+        throw Error("Incorrect password");
+      }
+      return foundAdmin;
+    });
 };
 
 module.exports = mongoose.model("Admin", adminSchema);
