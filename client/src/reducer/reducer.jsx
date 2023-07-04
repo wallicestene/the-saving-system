@@ -1,17 +1,22 @@
 export const initialState = {
-    user: null,
-}
+  user: null,
+};
 const reducer = (state, action) => {
+    console.log(action)
 
-    switch(action.type){
-        case 'SET_USER':
-            return {
-                ...state, 
-                user : action.user
-            };
-
-        default: 
-            throw Error("No case for that type found")
-    }
-}
-export default reducer
+  switch (action.type) {
+    case "LOGIN":
+      return {
+        ...state,
+        user: action.user,
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        user: null,
+      };
+    default:
+      throw Error("No case for that type found");
+  }
+};
+export default reducer;
