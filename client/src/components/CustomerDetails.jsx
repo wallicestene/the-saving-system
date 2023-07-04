@@ -40,7 +40,6 @@ const CustomerDetails = () => {
         .then(res => res.json())
         .then(data =>{
                 setCustomerData(data)
-                console.log("Customers fetched successfully", data)
     })
     .catch(err => console.log(err.message))
     },[])
