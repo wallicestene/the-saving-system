@@ -17,7 +17,6 @@ const Home = () => {
             if(data.length > 0){
                 setCustomerData(data)
                 setOriginalCustomerData(data)
-                console.log("Customers fetched successfully", data)
             }else{
                 console.log("No customers fetched!")
             }
@@ -41,7 +40,6 @@ const Home = () => {
             .then(data =>{
             if(data.length > 0){
                 setCustomerData(data)
-                console.log("Customers fetched successfully", data)
             }else{
                 console.log("No customers fetched!")
             }

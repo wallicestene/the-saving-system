@@ -7,17 +7,17 @@ import { useAuthContext } from '../context/authContext'
 
 const Navbar = () => {
     const [showMobileNav, setShowMobileNav] = useState(false)
-    const [{ user }, dispatch] = useAuthContext();
+    // const [{ user }, dispatch] = useAuthContext();
 
 
-    const handleLogOut = () =>{
-      // remove user from storage
-      localStorage.removeItem('user');
-      dispatch({
-        type:'LOGOUT',
-        user: null
-      })
-    }
+    // const handleLogOut = () =>{
+    //   // remove user from storage
+    //   localStorage.removeItem('user');
+    //   dispatch({
+    //     type:'LOGOUT',
+    //     user: null
+    //   })
+    // }
   return (
     <nav className='border-b-2 py-5  overflow-hidden flex items-center justify-between m-0 bg-white shadow-md px-2 lg:px-4 lg:h-fit h-16 relative font-Poppins'>
             <div className=' fixed lg:hidden z-40 right-0 top-0'>
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
        <div className=' flex items-center justify-between w-full'>
        <h1 className=" uppercase text-2xl font-bold">SafeSaver</h1>
-       <div onClick={handleLogOut} className=' cursor-pointer'>LogOut</div>
+       {/* <div onClick={handleLogOut} className=' cursor-pointer'>LogOut</div> */}
        <div className=' lg:hidden'>
           {
             <div className=' cursor-pointer'>

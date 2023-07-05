@@ -6,8 +6,8 @@ import SavingsForm from './components/SavingsForm'
 import CustomerDetails from './components/CustomerDetails'
 import TotalSavings from './components/TotalSavings'
 import { Toaster } from 'react-hot-toast'
-import Login from './components/Login'
-import SignUp from './components/SignUp'
+// import Login from './components/Login'
+// import SignUp from './components/SignUp'
 import { useAuthContext } from './context/authContext'
 
 const App = () => {
@@ -28,7 +28,6 @@ const App = () => {
         <div className=' sticky w-full  lg:p-0 top-0 z-40'>
            <Navbar/>
         </div>
-          <div>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/customer/:id" component={CustomerDetails}/>
@@ -37,7 +36,6 @@ const App = () => {
           {/* <Route path='/login' component={Login} />
           <Route path='/signup' component={SignUp} /> */}
         </Switch>
-        </div>
       </Router>
       <Toaster/>
     </div>
