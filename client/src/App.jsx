@@ -6,6 +6,8 @@ import SavingsForm from './components/SavingsForm'
 import CustomerDetails from './components/CustomerDetails'
 import TotalSavings from './components/TotalSavings'
 import { Toaster } from 'react-hot-toast'
+import Login from './components/Login'
+import signUp from './components/signUp'
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <Route exact path="/customer/:id" component={CustomerDetails}/>
           <Route path="/savingform" component={SavingsForm}/>
           <Route path="/totalAmount" component={TotalSavings}/>
+          <Route path='/login' component={Login} />
+          <Route path='/signup' component={signUp} />
         </Switch>
       </Router>
       <Toaster/>

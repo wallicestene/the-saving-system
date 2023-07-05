@@ -12,7 +12,8 @@ export default {
         Poppins: "Poppins"
       },
       width:{
-        500: "500px"
+        500: "500px",
+        600: "700px"
       }
     },
   },

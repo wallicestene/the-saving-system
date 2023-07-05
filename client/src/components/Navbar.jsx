@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import NavbarOptions from './NavbarOptions'
-import {Home, Menu, PersonAddAlt1, Savings } from '@mui/icons-material'
+import {Create, Home, Login, Menu, PersonAddAlt1, Savings } from '@mui/icons-material'
 import MobileNav from './MobileNav'
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
     
        </div>
        <div>
-        <ul className='hidden  lg:flex w-500 px-3 items-center justify-between font-bold overflow-hidden'>
+        <ul className='hidden  lg:flex w-600 px-3 items-center justify-between font-bold overflow-hidden'>
             <li>
                 <Link to="/">
                 <NavbarOptions Icon={Home} title="Home"/>
@@ -41,6 +41,16 @@ const Navbar = () => {
             <li>
                 <Link to="/savingform">
                 <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
+                </Link>
+            </li>
+            <li>
+                <Link to="/login">
+                <NavbarOptions Icon={Login} title="Log in"/>
+                </Link>
+            </li>
+            <li>
+                <Link to="/signup">
+                <NavbarOptions Icon={Create} title="Sign up"/>
                 </Link>
             </li>
         </ul>

@@ -1,4 +1,4 @@
-import { Close, Create, Home, PersonAddAlt1, Savings } from '@mui/icons-material'
+import { Close, Create, Home, Login, PersonAddAlt1, Savings } from '@mui/icons-material'
 import React from 'react'
 import NavbarOptions from './NavbarOptions'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
@@ -23,6 +23,16 @@ const MobileNav = ({showMobileNav, setShowMobileNav}) => {
             <li>
                 <Link to="/savingform" onClick={() => setShowMobileNav(!showMobileNav)}>
                 <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
+                </Link>
+            </li>
+            <li>
+                <Link to="/login">
+                <NavbarOptions Icon={Login} title="Log in"/>
+                </Link>
+            </li>
+            <li>
+                <Link to="/signup">
+                <NavbarOptions Icon={Create} title="Sign up"/>
                 </Link>
             </li>
         </ul>
