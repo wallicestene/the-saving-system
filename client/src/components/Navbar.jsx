@@ -55,7 +55,7 @@ const Navbar = () => {
                 <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
                 </Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to="/login">
                 <NavbarOptions Icon={Login} title="Log in"/>
                 </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <Link to="/signup">
                 <NavbarOptions Icon={Create} title="Sign up"/>
                 </Link>
-            </li>
+            </li> */}
         </ul>
        </div>
     </nav>

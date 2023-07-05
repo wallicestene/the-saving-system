@@ -25,7 +25,7 @@ const MobileNav = ({showMobileNav, setShowMobileNav}) => {
                 <NavbarOptions Icon={PersonAddAlt1} title="Add Customer"/>
                 </Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to="/login">
                 <NavbarOptions Icon={Login} title="Log in"/>
                 </Link>
@@ -34,7 +34,7 @@ const MobileNav = ({showMobileNav, setShowMobileNav}) => {
                 <Link to="/signup">
                 <NavbarOptions Icon={Create} title="Sign up"/>
                 </Link>
-            </li>
+            </li> */}
         </ul>
     </div>
   )

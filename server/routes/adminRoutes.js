@@ -1,13 +1,13 @@
-const express = require("express")
-const router = express.Router()
-// cpntroller functions
-const adminController = require("../controllers/adminController")
+// const express = require("express")
+// const router = express.Router()
+// // cpntroller functions
+// const adminController = require("../controllers/adminController")
 
-// login route
+// // login route
 
-router.post("/api/admin/login", adminController.loginAdmin)
+// router.post("/api/admin/login", adminController.loginAdmin)
 
-// sognup route
-router.post("/api/admin/signup", adminController.signupAdmin)
+// // sognup route
+// router.post("/api/admin/signup", adminController.signupAdmin)
 
-module.exports = router
+// module.exports = router
