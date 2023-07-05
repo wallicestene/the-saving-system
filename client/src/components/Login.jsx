@@ -1,13 +1,41 @@
 import React, { useState } from "react";
+import { useAuthContext } from "../context/authContext";
 
 const Login = () => {
+
+  const [{ user }, dispatch] = useAuthContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
+
+ fetch("http://localhost:5000/api/admin/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        //  save the user to local storage
+        localStorage.setItem("user", JSON.stringify(data));
+         //dispatch user data to context
+         dispatch({
+          type:"LOGIN",
+          user: data,
+         })
+      })
+      .catch((error) => {
+        console.error(error.message);
+        
+      });
+setEmail("")
+setPassword("")
   };
+
   return (
     <div>
       <form className="login" onSubmit={handleSubmit}>

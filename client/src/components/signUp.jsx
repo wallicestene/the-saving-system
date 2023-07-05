@@ -8,7 +8,6 @@ const signUp = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
@@ -23,7 +22,6 @@ const signUp = () => {
       .then((response) => response.json())
       .then((data) => {
         //  save the user to local storage
-        console.log(data)
         localStorage.setItem("user", JSON.stringify(data));
          //dispatch user data to context
          dispatch({
@@ -32,7 +30,8 @@ const signUp = () => {
          })
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.message);
+        
       });
 setEmail("")
 setPassword("")
@@ -59,6 +58,7 @@ setPassword("")
         />
         <button>SignUp</button>
       </form>
+      
     </div>
   );
 };
